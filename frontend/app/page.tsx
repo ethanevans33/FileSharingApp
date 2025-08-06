@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Loader2 } from 'lucide-react';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,9 +15,10 @@ export default function Home() {
   };
 
   return (
-      <Button disabled={isLoading} onClick={handleClick}>
-        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+    <div className="flex justify-center items-center min-h-screen">
+      <Button isLoading={isLoading} onClick={handleClick}>
         Click me
       </Button>
+    </div>
   );
 }
