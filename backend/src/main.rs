@@ -6,6 +6,7 @@ mod db;
 mod utils;
 mod middleware;
 mod handler;
+mod router;
 
 use axum::http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method};
 use config::Config;
