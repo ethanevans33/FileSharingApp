@@ -8,10 +8,13 @@ mod middleware;
 mod handler;
 mod router;
 
+use std::sync::Arc;
+
 use axum::http::{header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE}, HeaderValue, Method};
 use config::Config;
 use db::{DBClient, UserExt};
 use dotenv::dotenv;
+use router::create_router;
 use sqlx::postgres::PgPoolOptions;
 use tower_http::cors::CorsLayer;
 use tracing_subscriber::filter::LevelFilter;
